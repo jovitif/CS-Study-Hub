@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.Scanner;
 
 /*
@@ -46,7 +47,9 @@ public class Questao31 {
 
 }
 
-class Pessoa {
+
+@SuppressWarnings("serial")
+class Pessoa implements Serializable{
     private String cpf;
     private String nome;
     private int idade;
@@ -152,4 +155,13 @@ class Pessoa {
 	public double calcularImc(double peso,double altura) {
 		return peso/(altura*altura);
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "nome = " + nome + "\n" + "cpf = " + cpf + "\n" + "idade = " + idade + "sexo = " + sexo + "\n" + "peso = " + peso + "\n" + "altura = " + altura + "\n" + "imc = " + imc + "\n\n";
+	}
+	
+	
 }

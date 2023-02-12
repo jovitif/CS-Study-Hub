@@ -22,16 +22,26 @@ public class Questao28 {
 		}
 	}
 	
-	public static void maiormenorPosicao(int maior, int menor, int vet[]) {
-		int tam = vet.length;
-		int indicemaior = -1;
-		for (int i = 0; i < tam; i++) {
-			if(vet[i] > maior) {
-				maior = vet[i];
-				indicemaior = i;
-			}
-		}
-	}
+	public static int encontrarMaior(int[] vetor) {
+        int maior = vetor[0];
+        for (int i = 1; i < vetor.length; i++) {
+            if (vetor[i] > maior) {
+                maior = vetor[i];
+            }
+        }
+        return maior;
+    }
+	
+	public static int encontrarMenor(int[] vetor) {
+        int menor = vetor[0];
+        for (int i = 1; i < vetor.length; i++) {
+            if (vetor[i] < menor) {
+                menor = vetor[i];
+            }
+        }
+        return menor; 
+    }
+
 	
 	public static void main(String []args) {
 		System.out.print("Digite o tamanho do vetor:");
@@ -41,7 +51,9 @@ public class Questao28 {
 		preencherVetor(vet);
 		System.out.println("Vetor em ordem:");
 		mostrarVetor(vet);
-		maiormenorPosicao(maior, menor, vet);
-		System.out.print("Maior valor do vetor:" + maior);
+		maior = encontrarMaior(vet);
+		menor = encontrarMenor(vet);
+		System.out.print("Maior valor do vetor:" + maior + "\n");
+		System.out.print("Menor valor do vetor:" + menor);
 	}
 }
