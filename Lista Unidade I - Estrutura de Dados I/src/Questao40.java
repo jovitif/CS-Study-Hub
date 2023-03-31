@@ -1,57 +1,90 @@
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.Scanner;
 
-/*
- 	Construa um programa CODIFICADOR que receba um arquivo de texto de entrada e codifique ele usando 
- 	um padrão de troca de letras. Após esse processamento, gere um arquivo codificado. Construa outro 
- 	programa, que funcionará como DECODIFICADOR, que seja capaz de ler o arquivo codificado e produzir
- 	um arquivo de texto decodificado, que deve ser o mesmo texto original. Padrão de troca de letras 
- 	para codificar um texto:  Z<=>P E<=>O N<=>L I<=>A T<=>R
-*/
 public class Questao40 {
-	private static Scanner scanner = new Scanner(System.in);
-    public static void main(String[] args){
-    	String path = "texto.txt";
-    	// 	Processo de codificação
-    }
-    
-    public static void Codificador(String path, int iNova, Palavra[] dicionario) throws IOException 
-	{
-		BufferedWriter bufferedWriter = new BufferedWriter( new FileWriter(path) );
-		 for(int i=0; i<iNova; i++) {
-		        System.out.println(dicionario[i].palavra + " : " + dicionario[i].cont);
-		        bufferedWriter.append(dicionario[i].palavra + " : " + dicionario[i].cont + "\n");		        
-		    }
-		
-		bufferedWriter.close();
-	}
-	
-	public static String Leitura(String path) throws IOException 
-	{
-		BufferedReader bufferedReader = new BufferedReader( new FileReader(path) );
-		
-		StringBuffer sbResult = new StringBuffer();
-		String linha = "";
-		
-		while (linha != null) 
-		{
-			sbResult.append(linha + "\n");
-			linha = bufferedReader.readLine();
-			
-			if(linha != null) {
-				String[] parts = linha.split(";");
-				for (int i = 0; i < parts.length; i++) {
-					System.out.print("["+parts[i]+"] ");
-				}
-			}
+    private static final String CODIFICADOR_ARQUIVO_SAIDA = "texto.txt";
+    private static final String DECODIFICADOR_ARQUIVO_SAIDA = "textodecodificado.txt";
+    private static final HashMap<Character, Character> CODIFICACAO = new HashMap<>();
 
-		}
-		bufferedReader.close();
-		
-		return sbResult.toString();
-	}
+    static {
+        // Define as regras de codificação
+        CODIFICACAO.put('Z', 'P');
+        CODIFICACAO.put('P', 'Z');
+        CODIFICACAO.put('E', 'O');
+        CODIFICACAO.put('O', 'E');
+        CODIFICACAO.put('N', 'L');
+        CODIFICACAO.put('L', 'N');
+        CODIFICACAO.put('I', 'A');
+        CODIFICACAO.put('A', 'I');
+        CODIFICACAO.put('T', 'R');
+        CODIFICACAO.put('R', 'T');
+    }
+
+    public static void main(String[] args) throws FileNotFoundException {
+        // Executa o codificador
+        codificar("texto.txt", CODIFICADOR_ARQUIVO_SAIDA);
+        
+        // Executa o decodificador
+        decodificar(CODIFICADOR_ARQUIVO_SAIDA, DECODIFICADOR_ARQUIVO_SAIDA);
+    }
+
+    private static void codificar(String arquivoEntrada, String arquivoSaida) throws FileNotFoundException {
+        Scanner scanner = new Scanner(new File(arquivoEntrada));
+        PrintWriter printWriter = new PrintWriter(new File(arquivoSaida));
+
+        while (scanner.hasNextLine()) {
+            String linha = scanner.nextLine();
+            StringBuilder novaLinha = new StringBuilder();
+
+            for (int i = 0; i < linha.length(); i++) {
+                char c = linha.charAt(i);
+
+                if (CODIFICACAO.containsKey(c)) {
+                    novaLinha.append(CODIFICACAO.get(c));
+                } else {
+                    novaLinha.append(c);
+                }
+            }
+
+            printWriter.println(novaLinha.toString());
+        }
+
+        scanner.close();
+        printWriter.close();
+    }
+
+    private static void decodificar(String arquivoEntrada, String arquivoSaida) throws FileNotFoundException {
+        Scanner scanner = new Scanner(new File(arquivoEntrada));
+        PrintWriter printWriter = new PrintWriter(new File(arquivoSaida));
+
+        while (scanner.hasNextLine()) {
+            String linha = scanner.nextLine();
+            StringBuilder novaLinha = new StringBuilder();
+
+            for (int i = 0; i < linha.length(); i++) {
+                char c = linha.charAt(i);
+                boolean encontrado = false;
+
+                for (char chave : CODIFICACAO.keySet()) {
+                    if (CODIFICACAO.get(chave) == c) {
+                        novaLinha.append(chave);
+                        encontrado = true;
+                        break;
+                    }
+                }
+
+                if (!encontrado) {
+                    novaLinha.append(c);
+                }
+            }
+
+            printWriter.println(novaLinha.toString());
+        }
+
+        scanner.close();
+        printWriter.close();
+    }
 }

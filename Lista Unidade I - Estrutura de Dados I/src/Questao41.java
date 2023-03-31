@@ -1,10 +1,17 @@
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.Vector;
 
@@ -20,27 +27,99 @@ import java.util.Vector;
 public class Questao41 {
 	public static Scanner scanner = new Scanner(System.in);
 	public static void main(String []args) {
-		/*
-		  a) List: ArrayList, Vector, LinkedList
-		  A interface 'List' fornece métodos para acessar, adicionar, remover e manipuçar elementos na lista. Além disso, permite acessar elementos pela posição indexada, o que é útil para recuperar ou alterar um elemento específico na lista
-			java.util.List
-			ArrayList é uma implementação baseada em vetor da interface List. Ela armazena os elementos em uma matriz interna que pode ser redimensionada dinamicamente. Isso significa que o tamanho da lista pode ser ajustado automaticamente à medida que elementos são adicionados ou removidos. A ArrayList é mais eficiente para acessar elementos por posição, mas pode ser menos eficiente para inserções e remoções no meio da lista.
-			List<String> list = new ArrayList<>();
-			list.add("item1");
-		 */
-			List<String> list = new ArrayList<>();
-			/*
-			  LinkedList é uma implementação baseada em lista ligada da interface List. Em vez de armazenar elementos em uma matriz, os elementos são armazenados como nós de uma lista ligada. Isso significa que a LinkedList é mais eficiente para inserções e remoções no meio da lista, mas pode ser menos eficiente para acessar elementos por posição.
-			 */
-			List<String> list2 = new LinkedList<>();
-	
-	/*Vector é uma implementação antiga da interface List no Java. Ela é semelhante à ArrayList, mas é sincronizada. Isso significa que a Vector é segura para uso por múltiplas threads, enquanto a ArrayList não é. No entanto, a sincronização pode prejudicar o desempenho em aplicações que não precisam de segurança de threads.*/
-			List<String> list3 = new Vector<>();
-	/*HashSet é uma implementação da interface Set que usa um HashMap interno para armazenar os elementos. Ele não mantém a ordem dos elementos na coleção, o que significa que a ordem de iteração pode ser diferente da ordem de inserção. A HashSet é eficiente para verificar a presença de elementos, mas pode ser menos eficiente para ordenar elementos.*/
-			Set<String> set = new HashSet<>();
-			/*LinkedHashSet é uma implementação da interface Set que usa um LinkedHashMap interno para armazenar os elementos. Ele mantém a ordem dos elementos na coleção, o que significa que a ordem de iteração será a mesma da ordem de inserção. A LinkedHashSet é menos eficiente para verificar a presença de elementos do que a HashSet, mas é mais eficiente para manter a ordem dos elementos.*/
-			Set<String> set2 = new LinkedHashSet<>();
-			/*TreeSet é uma implementação da interface Set que usa uma TreeMap interna para armazenar os elementos. Ele mantém os elementos ordenados de acordo com a ordem natural dos elementos ou de acordo com uma ordem especificada pelo usuário. A TreeSet é mais eficiente para ordenar elementos do que a LinkedHashSet, mas pode ser menos eficiente para verificar a presença de elementos.*/
-			Set<String> set3 = new TreeSet<>();
+		//a) List: ArrayList, Vector, LinkedList - são classes que implementam a interface List em Java e permitem armazenar elementos em uma sequência ordenada.
+		
+		// ArrayList
+		List<String> arrayList = new ArrayList<>();
+		arrayList.add("Bruno");
+		arrayList.add("Gadelha");
+		arrayList.add("Paulo Cesar");
+		System.out.println(arrayList); 
+
+		// Vector
+		List<String> vector = new Vector<>();
+		vector.add("Estrutura de Dados I");
+		vector.add("Programação Web");
+		vector.add("Cálculo Numérico");
+		System.out.println(vector); 
+
+		// LinkedList
+		List<String> linkedList = new LinkedList<>();
+		linkedList.add("Bruno");
+		linkedList.add("Gadelha");
+		linkedList.add("Paulo Cesar");
+		System.out.println(linkedList);
+		
+		//b) Set: HashSet, LinkedHashSet, TreeSet - são classes que implementam a interface Set em Java e permitem armazenar elementos sem repetição.
+		
+		// HashSet
+		Set<String> hashSet = new HashSet<>();
+		hashSet.add("Gadelha");
+		hashSet.add("Bruno");
+		hashSet.add("Paulo Cesar");
+		System.out.println(hashSet); 
+
+		// LinkedHashSet
+		Set<String> linkedHashSet = new LinkedHashSet<>();
+		linkedHashSet.add("Programação Web");
+		linkedHashSet.add("Cálculo Numérico");
+		linkedHashSet.add("Estrutura de Dados I");
+		System.out.println(linkedHashSet); 
+
+		// TreeSet
+		Set<String> treeSet = new TreeSet<>();
+		treeSet.add("Gadelha");
+		treeSet.add("Bruno");
+		treeSet.add("Paulo Cesar");
+		System.out.println(treeSet); 
+		
+		//c) Queue: PriorityQueue, LinkedList - são classes que implementam a interface Queue em Java e permitem gerenciar elementos em uma fila, respeitando a ordem de inserção ou prioridade.
+		
+		// PriorityQueue
+		Queue<String> priorityQueue = new PriorityQueue<>();
+		priorityQueue.add("Programação Web");
+		priorityQueue.add("Estrutura de Dados I");
+		priorityQueue.add("Cálculo Numérico");
+		System.out.println(priorityQueue); 
+
+		// LinkedList
+		Queue<String> linkedList02 = new LinkedList<>();
+		linkedList02.add("Gadelha");
+		linkedList02.add("Bruno");
+		linkedList02.add("Paulo Cesar");
+		System.out.println(linkedList); 
+		
+		//d) Deque: LinkedList - é uma classe que implementa a interface Deque em Java e permite gerenciar elementos em uma fila dupla, permitindo inserção e remoção tanto no início quanto no final da fila.
+		
+		// LinkedList
+		Deque<String> deque = new LinkedList<>();
+		deque.addFirst("Estrutura de Dados I");
+		deque.addLast("Programação Web");
+		deque.addFirst("Cálculo Numérico");
+		System.out.println(deque); 
+		
+		//e) Map: HashMap, LinkedHashMap, TreeMap - são classes que implementam a interface Map em Java e permitem armazenar pares de chave-valor, onde as chaves não se repetem e são usadas para acessar os valores correspondentes.
+		
+		// HashMap
+		Map<String, String> hashMap = new HashMap<>();
+		hashMap.put("Gadelha", "Programação Web");
+		hashMap.put("Bruno", "Estrutura de Dados I");
+		hashMap.put("Paulo Cesar", "Cálculo Numérico");
+		System.out.println(hashMap); // {Gadelha=Estrutura de Dados I, Bruno=Programação Web, Paulo Cesar=Cálculo Numérico}
+
+		// LinkedHashMap
+		Map<String, String> linkedHashMap = new LinkedHashMap<>();
+		linkedHashMap.put("Paulo Cesar", "Cálculo Numérico");
+		linkedHashMap.put("Gadelha", "Estrutura de Dados I");
+		linkedHashMap.put("Bruno", "Programação Web");
+		System.out.println(linkedHashMap); // {Paulo Cesar=Cálculo Numérico, Gadelha=Estrutura de Dados I, Bruno=Programação Web}
+
+		// TreeMap
+		Map<String, String> treeMap = new TreeMap<>();
+		treeMap.put("Bruno", "Estrutura de Dados I");
+		treeMap.put("Gadelha", "Programação Web");
+		treeMap.put("Paulo Cesar", "Cálculo Numérico");
+		System.out.println(treeMap); 
+
 	}
 }
