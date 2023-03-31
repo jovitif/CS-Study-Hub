@@ -1,4 +1,4 @@
-package ResolucaoSistemasLineares;
+package MetodosDiretos;
 
 import java.util.Arrays;
 
