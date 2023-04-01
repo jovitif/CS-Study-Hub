@@ -38,16 +38,15 @@ public class ListaSimples<T> implements ListaSimplesInterface<T> {
 		}
 		else 
 	    {
+			System.out.print("Valores: ");
 	        while( p != null )
 	        {
-	            System.out.println("\n");
-	            System.out.println("Dado: " + p.data );
-	            System.out.println("\n");
+	            System.out.print(p.data + " ");
 	            p = p.next;
 	        }
 	    }
 		
-		System.out.println("size = " + size + "\n");
+		System.out.println("\nsize = " + size + "\n");
 	}
 	
 	public void showReverse()

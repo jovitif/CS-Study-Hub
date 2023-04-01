@@ -1,12 +1,8 @@
 package Questao06;
 
-public interface PilhaInterface <Generico> {
-    boolean taCheio();
-    boolean taVazio();
-	void coloqueAi(Generico number) throws Excessao;
-	Generico boraOlharoTopo() throws Excessao;
-	Generico tireAi() throws Excessao;
-    void vamoMostrar();
-    void olhaiTamanho();
-    void limparTudo();
+public interface PilhaInterface<T> {
+    boolean isEmpty();
+    void push(T data);
+    T pop();
+    T peek();
 }

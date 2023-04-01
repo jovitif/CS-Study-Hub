@@ -1,6 +1,5 @@
 package Questao06;
 
-import java.util.Arrays;
 /*
 		Pilha de tamanho dinâmico : uma pilha de tamanho dinâmico pode aumentar ou diminuir 
 	dinamicamente. Quando a pilha está cheia, ela automaticamente aumenta seu tamanho para 
@@ -9,60 +8,51 @@ import java.util.Arrays;
 	da pilha.
 */
 
-public class Pilha  {
-	StackNode root;
-	  
-    static class StackNode {
-        int data;
-        StackNode next;
-  
-        StackNode(int data) { this.data = data; }
-    }
-  
-    public boolean isEmpty()
-    {
-        if (root == null) {
-            return true;
+public class Pilha<T> implements PilhaInterface<T> {
+    private StackNode<T> root;
+
+    private static class StackNode<T> {
+        private T data;
+        private StackNode<T> next;
+
+        private StackNode(T data) {
+            this.data = data;
         }
-        else
-            return false;
     }
-  
-    public void push(int data)
-    {
-        StackNode newNode = new StackNode(data);
-  
+
+    public boolean isEmpty() {
+        return root == null;
+    }
+
+    public void push(T data) {
+        StackNode<T> newNode = new StackNode<>(data);
+
         if (root == null) {
             root = newNode;
-        }
-        else {
-            StackNode temp = root;
+        } else {
+            StackNode<T> temp = root;
             root = newNode;
             newNode.next = temp;
         }
         System.out.println(data + " pushed to stack");
     }
-  
-    public int pop()
-    {
-        int popped = Integer.MIN_VALUE;
+
+    public T pop() {
+        T popped = null;
         if (root == null) {
-            System.out.println("Stack is Empty");
-        }
-        else {
+            System.out.println("Stack is empty");
+        } else {
             popped = root.data;
             root = root.next;
         }
         return popped;
     }
-  
-    public int peek()
-    {
+
+    public T peek() {
         if (root == null) {
             System.out.println("Stack is empty");
-            return Integer.MIN_VALUE;
-        }
-        else {
+            return null;
+        } else {
             return root.data;
         }
     }

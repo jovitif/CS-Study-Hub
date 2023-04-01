@@ -6,5 +6,8 @@ public class Questao06 {
 	public static void main(String []args) {
 		Pilha pilha = new Pilha();
 		System.out.println(pilha.isEmpty());
+		pilha.push("Joao");
+		pilha.push("Vitor");
+		System.out.println(pilha.peek());
 	}
 }

@@ -7,5 +7,11 @@ package Questao03;
 public class Questao03 {
 	public static void main(String []args) {
 		ListaSimplesInterface<String> lista01 = new ListaSimples<String>();
+		lista01.addFirst("João");
+		lista01.addLast("Vitor");
+		lista01.addLast("Fernandes");
+		lista01.addLast("Sales");
+		lista01.addAfter("Fernandes", "de");
+		lista01.show();
 	}
 }
