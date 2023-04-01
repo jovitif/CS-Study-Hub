@@ -15,6 +15,11 @@ Algoritmo:
 
 */
 
+/*
+Infix to Postfix Stack : Este tipo de pilha é usado para converter 
+expressões infixas em expressões postfixas.
+*/
+
 public class Questao08 {
 	public static Scanner input = new Scanner(System.in);
 	public static void main(String []args) {

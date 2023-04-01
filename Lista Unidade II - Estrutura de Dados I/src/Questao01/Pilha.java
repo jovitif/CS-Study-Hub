@@ -2,6 +2,13 @@ package Questao01;
 
 import java.util.Arrays;
 
+/*
+		Pilha de tamanho fixo : como o nome sugere, uma pilha de tamanho fixo tem um tamanho fixo e não 
+	pode crescer ou encolher dinamicamente. Se a pilha estiver cheia e for feita uma tentativa de 
+	adicionar um elemento a ela, ocorrerá um erro de estouro. Se a pilha estiver vazia e for feita
+	uma tentativa de remover um elemento dela, ocorrerá um erro de subfluxo.
+*/
+
 public class Pilha <Generico> implements PilhaInterface <Generico> {
 	private int valorTopo;
 	private int tamanho;
