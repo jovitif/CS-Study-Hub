@@ -4,7 +4,7 @@ package Questao06;
 
 public class Questao06 {
 	public static void main(String []args) {
-		Pilha pilha = new Pilha();
+		PilhaInterface<String>pilha = new Pilha<String>();
 		System.out.println(pilha.isEmpty());
 		pilha.push("Joao");
 		pilha.push("Vitor");
