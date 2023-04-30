@@ -2,6 +2,7 @@ package MetodosDiretos;
 
 import java.util.Arrays;
 
+// 4.1.1 Eliminação gaussiana com pivotamento parcial
 public class EliminacaoGaussiana {
 	public static double[] elimination(double[][] A, double[] b) {
 	    int n = b.length;
@@ -42,11 +43,14 @@ public class EliminacaoGaussiana {
 
 	// Teste com dados
 	public static void main(String[] args) {
-	    double[][] Ai = {{1, 1, 1},
-	                     {2, 1, -1},
-	                     {2, 2,1}};
-	    double[] bi = {1, 0, 1};
-
+	   /*
+		double[][] Ai = {{3, 2, 4},
+	                     {1, 1, 2},
+	                     {4, 3,-2}};
+	    double[] bi = {1, 2, 3};
+*/
+		double [][] Ai = {{1,1,1},{1,0,10},{0,10,1}};
+		double[] bi = {0,-48,25};
 	    // Transformando em sist. equiv.
 	    double[] b = elimination(Ai, bi);
 	    System.out.println("U = " + Arrays.deepToString(Ai));

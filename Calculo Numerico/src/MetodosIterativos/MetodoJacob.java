@@ -57,8 +57,8 @@ public class MetodoJacob {
     }
     
     public static void main(String []args) {
-    	double[][] A = {{10,1},{1,8}};
-    	double[] b = {23,26};
+    	double[][] A = {{3,1,-1},{2,-4,2},{-1,2,5}};
+    	double[] b = {7,4,-5};
     	double[] x0 = {0, 0, 0};
     	double tol = 1e-6;
     	int N = 1000;

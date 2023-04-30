@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class DecomposicaoLUDoLitleMethod {
     public static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        double[][] A = {{2, 3, 1}, {1, 2, 3}, {3, 1, 2}};
-        double[] b = {9, 6, 8};
+        double[][] A = {{1, 1, 1}, {2, 1, -1}, {2, -1, 1}};
+        double[] b = {-2, 1, 3};
         int n = A.length;
 
         double[][] L = new double[n][n];
