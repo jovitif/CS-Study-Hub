@@ -1,26 +1,20 @@
-<h1 align="center">
-<img src="https://cdn-icons-png.flaticon.com/512/644/644609.png" width="200px">
-<p>Aprendendo Java 👨🏾‍💻🚀</p>
-</h1>
+<h1 style="text-align: center;">💻 CS-Study-Hub 💻</h1>
 
-## 👁‍🗨 Sobre
+<p style="text-align: center;">A repository created to help computer science students have a less painful journey through college.</p>
 
-O repositório que estou desenvolvendo contém diversos conteúdos relacionados à programação em Java, abrangendo desde conceitos básicos até tópicos mais avançados, como estrutura de dados e programação orientada a objetos. <br> O objetivo desse repositório é fornecer uma fonte abrangente de informações sobre Java, visando ajudar estudantes e programadores iniciantes.
+<img src="https://media.tenor.com/bvYhwX55qUAAAAAM/a-level-computing.gif" alt="GIF engraçado" style="display: block; margin: 0 auto;">
 
+<h2>The curriculum of the Computer Science program at the Universidade Federal Rural do Semi-Árido (UFERSA) in portuguese."</h2>
 
-## 👨🏾‍💻 Roadmap
-<img src="https://roadmap.sh/roadmaps/java.png" alt="roadmap para se tornar desenvolvedor java">
+<p>The Computer Science curriculum is designed to provide students with a solid foundation in programming principles, algorithms, data structures, operating systems, computer networks, databases, artificial intelligence, among other topics.</p>
 
-## 📚 Link da Trilha Java
-- [Link para acessar o site roadmap.sh que contém a trilha](https://roadmap.sh/java)
+[Click here to view the curriculum in PDF](https://cc.ufersa.edu.br/wp-content/uploads/sites/31/2018/05/Grade_computa%C3%A7%C3%A3o_integral.pdf)
 
-## 🛠 Tecnologias e Ferramentas
-- [Java](https://www.oracle.com/br/java/technologies/downloads/)
-```bash
-# Versão do java instalado
-C:\Users\Usuário>java --version
-java 11.0.17 2022-10-18 LTS
-Java(TM) SE Runtime Environment 18.9 (build 11.0.17+10-LTS-269)
-Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.17+10-LTS-269, mixed mode)
-```
-- [Eclipse](https://www.eclipse.org/downloads/)
+[Click here to view the course pedagogical project in PDF](https://cc.ufersa.edu.br/wp-content/uploads/sites/31/2018/01/PPC_2018.pdf)
+
+<h2>Contact</h2>
+<p>Get in touch with me for more information:</p>
+
+- Email: [joaosales911@gmail.com](mailto:joaosales911@gmail.com)
+- LinkedIn: [João Sales](https://www.linkedin.com/in/jo%C3%A3o-sales-058747211/)
+- Instagram: [j2aov](https://www.instagram.com/j2aov/)
